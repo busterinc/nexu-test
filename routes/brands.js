@@ -8,10 +8,11 @@ console.log('process.env.SUPABASE_KEY..............', process.env.SUPABASE_KEY)
 const supabase = createClient(process.env.SUPABASE_URL, process.env.SUPABASE_KEY);
 
 const { errorCatalog } = require('../catalog/matrix');
+const { verifyToken } = require('../services/auth');
 
 
 // GET /brands
-router.get('/', async (req, res) => {
+router.get('/', verifyToken, async (req, res) => {
     try {
         const { data: cars, error } = await supabase
             .from('cars')
@@ -49,7 +50,7 @@ router.get('/', async (req, res) => {
 });
 
 // POST /brands
-router.post('/', async (req, res) => {
+router.post('/', verifyToken, async (req, res) => {
     try {
         console.log('req.body..............', req.body)
         const { name } = req.body;
@@ -128,7 +129,7 @@ router.post('/', async (req, res) => {
 });
 
 // GET /brands/:id/models
-router.get('/:id/models', async (req, res) => {
+router.get('/:id/models', verifyToken, async (req, res) => {
     try {
         const { id } = req.params;
         console.log('id................', id)
@@ -161,7 +162,7 @@ router.get('/:id/models', async (req, res) => {
 });
 
 // POST /brands/:id/models
-router.post('/:id/models', async (req, res) => {
+router.post('/:id/models', verifyToken, async (req, res) => {
     try {
         const { id } = req.params;
         console.log('id**************************', id)

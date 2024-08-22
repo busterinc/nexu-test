@@ -9,8 +9,10 @@ console.log('process.env.SUPABASE_URL..............', process.env.SUPABASE_URL)
 console.log('process.env.SUPABASE_KEY..............', process.env.SUPABASE_KEY)
 const supabase = createClient(process.env.SUPABASE_URL, process.env.SUPABASE_KEY);
 
+const { verifyToken } = require('../services/auth');
+
 // GET /models
-router.get('/', async (req, res) => {
+router.get('/', verifyToken, async (req, res) => {
     try {
         let { greater, lower } = req.query;
         
@@ -48,7 +50,7 @@ router.get('/', async (req, res) => {
 });
 
 // PUT /models/:id
-router.put('/:id', async (req, res) => {
+router.put('/:id', verifyToken, async (req, res) => {
     try {
         const { id } = req.params;
         console.log('id --------------------', id)

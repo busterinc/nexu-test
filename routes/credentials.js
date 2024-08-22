@@ -1,7 +1,6 @@
 const express = require('express');
 
 const { createClient } = require('@supabase/supabase-js');
-// const { verifyToken } = require('../services/auth');
 const { activityTrace } = require('../services/log');
 const { logActions } = require('../catalog/matrix');
 
