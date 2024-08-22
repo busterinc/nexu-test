@@ -1,12 +1,9 @@
 # 🚀 Ejercicio de Codificación Backend de Nexu
 
-## 🎯 Objetivo
-
-Es un pequeño desafío de codificación que te permita mostrar tus habilidades mientras te da una idea de algunos de los problemas que podrías encontrar en Nexu. Sabemos que estás ocupado con la vida, así que esperamos que puedas dedicar alrededor de 2 horas a resolver este ejercicio. No esperamos que termines en 2 horas, así que no te preocupes si no lo logras. Envía lo que tengas junto con algunas notas sobre tus pensamientos y cómo procederías si tuvieras más tiempo. ¡Lo más importante es que te diviertas! 😄
 
 ## 📜 Descripción General
 
-¡Acabas de ser contratado para unirte al genial equipo de ingeniería en Nexu! La primera tarea en tu backlog de sprint es construir una aplicación backend para un frontend ya existente. El frontend necesita las siguientes rutas:
+construir una aplicación backend para un frontend ya existente. El frontend necesita las siguientes rutas:
 
 ### 🛠️ Rutas
 
@@ -33,10 +30,10 @@ Lista todas las marcas.
   {"id": 5, "nombre": "Buick", "average_price": 290371},
   "..."
 ]
+```
 
 
-
-⚙️ Instalación y Ejecución
+## ⚙️ Instalación y Ejecución
     1. Clona el repositorio
     bash
     Copiar código
@@ -59,11 +56,11 @@ Lista todas las marcas.
 
 
 
-📦 Dependencias
+## 📦 Dependencias
     El proyecto utiliza las siguientes dependencias:
 
-    supabase
-    cors
-    dotenv
-    express
-    jsonwebtoken
+    - supabase
+    - cors
+    - dotenv
+    - express
+    - jsonwebtoken
